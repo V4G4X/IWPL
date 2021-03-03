@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run -dit --name php_apache -p 8082:80 -v "$PWD/htdocs":/var/www/html php:apache
