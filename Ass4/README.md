@@ -1,5 +1,5 @@
 ## For Apache in a Docker Container 
-### Run
+### Once at this folder from the CLI, Run
 ```
 ./DOCKER_UNIX
 ```
