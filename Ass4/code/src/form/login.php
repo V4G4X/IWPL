@@ -3,12 +3,12 @@
 
     //If already logged IN
     if (isset($_SESSION['loggedIN'])){
-        header('Location: hidden.php');
+        header('Location: success.php');
         exit();
     }
 
     if (isset($_POST['login'])) {
-        $connection = new mysqli('localhost','user','password','loginTutorial');
+        $connection = new mysqli('db','user','password','loginTutorial');
 
         $email = $connection->real_escape_string($_POST['emailPHP']);
         $password = $connection->real_escape_string($_POST['passwordPHP']);
@@ -91,7 +91,7 @@
                                     $("#response").removeClass("text-danger");
                                     $("#response").addClass("text-success");
                                     $("#response").html("Login was Successful!");
-                                    window.location = 'hidden.php';
+                                    window.location = 'success.php';
                                 }
                                 else if(response === "failure"){
                                     console.log("Failure!");
@@ -100,10 +100,10 @@
                                     $("#response").html("Login was Unsuccessful!");
                                 }
                                 else{
-                                    console.log("Weird...");
+                                    console.log(response);
                                     $("#response").removeClass("text-success");
                                     $("#response").addClass("text-danger");
-                                    $("#response").html("Some Exception Ocurred");
+                                    $("#response").html("Some exception ocurred: Check the browser's Console for more details.");
                                 }
                             },
                             dataType: 'text'
