@@ -5,6 +5,12 @@ docker-compose up
 ```
 Docker will build the stack for you(one-time download).  
 ### Access the content at ```localhost/form```
+Valid Login Details for testing:
+| Email      | Password     |
+| :------------- | ----------: |
+| email@site.com   | password | 
+|  varun.gawande@gmail.com | password   | 
+
 <br>
 
 # Troubleshooting: 
