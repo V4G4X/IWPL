@@ -22,7 +22,7 @@ services:
       MYSQL_DATABASE: loginTutorial
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
     volumes: 
-      - ${PWD}/mysql:/docker-entrypoint-initdb.d
+      - ./mysql:/docker-entrypoint-initdb.d
 
   adminer:
     image: adminer
