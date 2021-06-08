@@ -13,6 +13,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.google.gson.Gson;
 
+
 @Path("/citySpots")
 public class CityInfo {
 	final static private Map<String, List<String>> cityDict;
@@ -29,6 +30,14 @@ public class CityInfo {
 		return cityDict.get(city);
 	}
 	
+	@GET
+	@Path("/all")
+	@Produces(MediaType.APPLICATION_JSON)
+	public static String getAllCitySpots() {
+		Gson gson = new Gson();
+		return gson.toJson(cityDict);
+	}
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public static String getCitySpots(@QueryParam("city") String city) {
